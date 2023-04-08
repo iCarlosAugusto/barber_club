@@ -113,9 +113,47 @@ class _PartnersDetailsViewState extends State<PartnersDetailsView>
                   },
                 )
               ),
-              const Center(
-                child: Text('aaaaaaaaab'),
-              )
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  separatorBuilder: (_, __) => const SizedBox(height: 16),
+                  itemBuilder: (_, __) {
+                    return InkWell(
+                      onTap: () {
+                        print('AAAAAAAA');
+                      },
+                      child: Card(
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: 200,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Container(
+                                height: double.infinity,
+                                width: 170,
+                                color: Colors.blue,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  TextWidget('Corte dêgrade'),
+                                  TextWidget('R\$ 20,00', isFontWeight: true),
+                                  TextWidget('15 minutos')
+                                ],
+                              ),
+                              const Icon(Icons.arrow_forward_ios)
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                )
+              ),
             ]),
           ),
         ],
